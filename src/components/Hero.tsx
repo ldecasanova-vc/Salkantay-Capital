@@ -64,11 +64,11 @@ export default function Hero() {
           src="/Mountain.jpg"
           alt="Salkantay Mountain"
           fill
-          className="object-cover opacity-60 mix-blend-overlay"
+          className="object-cover opacity-80 mix-blend-soft-light"
           priority
         />
         {/* Cinematic Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#070D1A]/30 via-[#070D1A]/50 to-[#070D1A]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#070D1A]/10 via-[#070D1A]/40 to-[#070D1A]" />
 
         {/* Radial aurora bloom */}
         {/* Primary bloom — large, centered-right */}
