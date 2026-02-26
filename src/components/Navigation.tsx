@@ -46,7 +46,7 @@ export default function Navigation() {
                 alt="Salkantay Ventures"
                 width={500}
                 height={160}
-                className="h-35 w-auto transition-all duration-500"
+                className="h-20 md:h-35 w-auto transition-all duration-500"
                 priority
               />
             </a>

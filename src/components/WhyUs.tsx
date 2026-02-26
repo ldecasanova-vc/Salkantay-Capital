@@ -43,7 +43,7 @@ function AnimatedNumber({
           animate(count, value, { duration: 2, ease: "easeOut" })
         }
       }}
-      className="text-5xl md:text-[56px] font-semibold text-[#0B1F3B] leading-none mb-2"
+      className="text-4xl md:text-[56px] font-semibold text-[#0B1F3B] leading-none mb-2"
     >
       {display}
     </motion.div>
@@ -112,7 +112,7 @@ export default function WhyUs() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-gray-100">
             {stats.map((stat) => (
-              <div key={stat.label} className="bg-white px-8 py-10">
+              <div key={stat.label} className="bg-white px-5 md:px-8 py-10">
                 <AnimatedNumber
                   value={stat.value}
                   prefix={stat.prefix}

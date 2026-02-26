@@ -129,7 +129,7 @@ export default function Hero() {
           {/* Main headline — Apollo-scale */}
           <motion.h1
             variants={itemVariants}
-            className="text-[clamp(52px,8vw,96px)] font-light text-white leading-[1.02] tracking-[-0.02em] mb-8"
+            className="text-[clamp(42px,8vw,96px)] font-light text-white leading-[1.02] tracking-[-0.02em] mb-8"
           >
             Capital Built for<br />
             <span className="font-semibold italic">What Comes</span><br />
