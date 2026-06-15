@@ -12,8 +12,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Salkantay Ventures | Institutional Fixed Income — Offshore",
-  description: "Access proven institutional-grade Fixed Income strategies through offshore accounts. Managed by Salkantay Ventures & BLUM SAF.",
+  title: "Salkantay Capital | Asset Management · Corporate Finance · Wealth Management",
+  description: "An integrated platform across Asset Management, Corporate Finance & Advisory, and Wealth Management for institutional and private investors.",
 };
 
 export default function RootLayout({

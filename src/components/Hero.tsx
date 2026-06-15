@@ -17,14 +17,16 @@ function AnimatedStat({
   label,
   prefix = "",
   suffix = "",
+  decimals = 0,
 }: {
   value: number
   label: string
   prefix?: string
   suffix?: string
+  decimals?: number
 }) {
   const rounded = useMotionValue(0)
-  const display = useTransform(rounded, (latest) => `${prefix}${Math.round(latest)}${suffix}`)
+  const display = useTransform(rounded, (latest) => `${prefix}${latest.toFixed(decimals)}${suffix}`)
   const hasAnimated = useRef(false)
 
   return (
@@ -122,7 +124,7 @@ export default function Hero() {
           <motion.div variants={itemVariants} className="flex items-center gap-4 mb-10">
             <div className="w-10 h-px bg-white/30" />
             <span className="text-white/40 text-[11px] tracking-[0.25em] uppercase font-medium">
-              Institutional Fixed Income · Offshore Strategy
+              Asset Management · Corporate Finance · Wealth Management
             </span>
           </motion.div>
 
@@ -131,9 +133,9 @@ export default function Hero() {
             variants={itemVariants}
             className="text-[clamp(42px,8vw,96px)] font-light text-white leading-[1.02] tracking-[-0.02em] mb-8"
           >
-            Capital Built for<br />
-            <span className="font-semibold italic">What Comes</span><br />
-            <span className="font-light">Next</span>
+            An Integrated<br />
+            <span className="font-semibold italic">Capital</span><br />
+            <span className="font-light">Platform</span>
           </motion.h1>
 
           {/* Subheadline */}
@@ -141,8 +143,9 @@ export default function Hero() {
             variants={itemVariants}
             className="text-white/50 text-lg md:text-xl leading-relaxed max-w-xl mb-12 font-light"
           >
-            Proven BLUM SAF fixed income strategies, accessible offshore.
-            Built for sophisticated investors who demand discipline, precision and results.
+            Three complementary divisions — Asset Management, Corporate Finance & Advisory,
+            and Wealth Management — serving institutional and private clients with discipline,
+            precision and discretion.
           </motion.p>
 
           {/* CTAs */}
@@ -169,7 +172,7 @@ export default function Hero() {
             className="border-t border-white/10 pt-10 grid grid-cols-3 gap-8 md:gap-20 max-w-xl"
           >
             <AnimatedStat value={100} prefix="+$" suffix="M" label="Assets Under Management" />
-            <AnimatedStat value={10.6} prefix="+" suffix="%" label="Annual Return 2024" />
+            <AnimatedStat value={10.6} prefix="+" suffix="%" label="Annual Return 2024" decimals={1} />
             <AnimatedStat value={20} prefix="+" suffix=" Yrs" label="Team Experience" />
           </motion.div>
         </motion.div>

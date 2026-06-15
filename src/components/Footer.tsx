@@ -11,34 +11,38 @@ const sectionVariants: Variants = {
 }
 
 export default function Footer() {
+  const [name, setName] = useState("")
   const [email, setEmail] = useState("")
+  const [message, setMessage] = useState("")
   const [submitted, setSubmitted] = useState(false)
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("Newsletter signup:", email)
+    console.log("Contact form submission:", { name, email, message })
+    setName("")
     setEmail("")
+    setMessage("")
     setSubmitted(true)
-    setTimeout(() => setSubmitted(false), 3000)
+    setTimeout(() => setSubmitted(false), 4000)
   }
 
   const footerLinks = [
     {
-      heading: "Company",
+      heading: "Divisions",
       links: [
-        { label: "Investment Strategy", href: "#strategy" },
-        { label: "Fund Performance", href: "#performance" },
-        { label: "Why Us", href: "#solutions" },
-        { label: "Leadership Team", href: "#team" },
+        { label: "Asset Management", href: "#services" },
+        { label: "Corporate Finance & Advisory", href: "#services" },
+        { label: "Wealth Management", href: "#services" },
+        { label: "How We Do It", href: "#approach" },
       ],
     },
     {
-      heading: "Investors",
+      heading: "Firm",
       links: [
-        { label: "LP Portal", href: "#" },
-        { label: "Quarterly Reports", href: "#" },
-        { label: "Fund Documents", href: "#" },
-        { label: "FAQ", href: "#" },
+        { label: "Our Results", href: "#results" },
+        { label: "Our Values", href: "#values" },
+        { label: "Our Team", href: "#team" },
+        { label: "Partners & Allies", href: "#partners" },
       ],
     },
     {
@@ -73,11 +77,11 @@ export default function Footer() {
                 <span className="text-white/40 text-xs tracking-[0.2em] uppercase font-medium">Get In Touch</span>
               </div>
               <h2 className="text-4xl md:text-5xl font-light leading-tight mb-6">
-                Let&apos;s Build the<br />
-                <span className="font-semibold">Next Level of Growth</span>
+                Let&apos;s Discuss<br />
+                <span className="font-semibold">Your Capital Strategy</span>
               </h2>
               <p className="text-white/50 text-base leading-relaxed font-light mb-8 max-w-sm">
-                Request our detailed investment prospectus or schedule a confidential consultation with our team.
+                Request a detailed overview of our divisions or schedule a confidential consultation with our team.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center gap-3 text-white/60">
@@ -95,32 +99,48 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Newsletter */}
+            {/* Contact form */}
             <div className="border border-white/10 p-8">
-              <h3 className="text-lg font-semibold mb-2">Market Intelligence</h3>
+              <h3 className="text-lg font-semibold mb-2">Send Us a Message</h3>
               <p className="text-white/50 text-sm leading-relaxed mb-6 font-light">
-                Receive our quarterly fixed income outlook, fund performance updates and strategic insights.
+                Tell us briefly how we can help. A member of our team will get back to you shortly.
               </p>
               <form onSubmit={handleSubmit} className="space-y-3">
                 <input
+                  type="text"
+                  placeholder="Full name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required
+                  className="w-full bg-white/5 border border-white/10 text-white placeholder:text-white/25 px-4 py-3 text-sm focus:outline-none focus:border-white/30 transition-colors"
+                />
+                <input
                   type="email"
-                  placeholder="Your institutional email"
+                  placeholder="Email address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
                   className="w-full bg-white/5 border border-white/10 text-white placeholder:text-white/25 px-4 py-3 text-sm focus:outline-none focus:border-white/30 transition-colors"
                 />
+                <textarea
+                  placeholder="How can we help?"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  required
+                  rows={4}
+                  className="w-full bg-white/5 border border-white/10 text-white placeholder:text-white/25 px-4 py-3 text-sm focus:outline-none focus:border-white/30 transition-colors resize-none"
+                />
                 <button
                   type="submit"
                   className="w-full bg-white text-[#0B1F3B] py-3 text-sm font-medium tracking-wide uppercase hover:bg-gray-100 transition-colors flex items-center justify-center gap-2"
                 >
-                  {submitted ? "Subscribed ✓" : (
-                    <>Subscribe <ArrowRight className="w-3.5 h-3.5" /></>
+                  {submitted ? "Message Sent ✓" : (
+                    <>Send Message <ArrowRight className="w-3.5 h-3.5" /></>
                   )}
                 </button>
               </form>
               <p className="text-white/25 text-xs mt-4">
-                For qualified institutional investors. Unsubscribe at any time.
+                We respect your privacy. Your information is used only to respond to your inquiry.
               </p>
             </div>
           </div>
@@ -144,7 +164,7 @@ export default function Footer() {
                 />
               </div>
               <p className="text-white/40 text-xs leading-relaxed font-light mb-6">
-                Institutional asset management for global fixed income investors.
+                An integrated capital platform: Asset Management, Corporate Finance & Advisory, and Wealth Management.
               </p>
               <div className="flex gap-4">
                 <a href="#" className="text-white/30 hover:text-white/60 transition-colors">
@@ -179,10 +199,10 @@ export default function Footer() {
       <div className="px-6 lg:px-8 py-8">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-white/25 text-xs">
-            © 2025 Salkantay Ventures. All rights reserved.
+            © 2025 Salkantay Capital. All rights reserved.
           </p>
           <p className="text-white/25 text-xs text-center md:text-right">
-            Securities offered exclusively to qualified institutional and accredited investors. Past performance is not indicative of future results.
+            Services offered to institutional, corporate and qualified private clients. Past performance is not indicative of future results.
           </p>
         </div>
       </div>

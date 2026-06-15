@@ -15,10 +15,12 @@ export default function Navigation() {
   }, [])
 
   const navLinks = [
-    { name: "Strategy", href: "#strategy" },
-    { name: "Performance", href: "#performance" },
-    { name: "Solutions", href: "#solutions" },
+    { name: "What We Do", href: "#services" },
+    { name: "How", href: "#approach" },
+    { name: "Results", href: "#results" },
+    { name: "Values", href: "#values" },
     { name: "Team", href: "#team" },
+    { name: "Partners", href: "#partners" },
   ]
 
   const scrollTo = (id: string) => {
@@ -53,7 +55,7 @@ export default function Navigation() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-10">
+          <div className="hidden md:flex items-center space-x-5 lg:space-x-7">
             {navLinks.map((link) => (
               <a
                 key={link.name}

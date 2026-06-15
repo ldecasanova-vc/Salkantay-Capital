@@ -53,7 +53,7 @@ export default function Performance() {
             <div className="flex items-center gap-3 mb-6">
               <div className="w-8 h-px bg-[#0B1F3B]" />
               <span className="text-[#0B1F3B]/40 text-[11px] tracking-[0.22em] uppercase font-medium">
-                Track Record
+                Asset Management · Track Record
               </span>
             </div>
             <h2 className="text-4xl md:text-[52px] font-light text-[#0B1F3B] leading-[1.1] tracking-tight">
@@ -62,7 +62,7 @@ export default function Performance() {
             </h2>
           </div>
           <p className="text-gray-400 text-sm max-w-xs leading-relaxed font-light md:text-right">
-            Consistent alpha generation across global fixed income segments since inception.
+            A consistent track record across our investment strategies, reflecting the discipline applied throughout our platform.
           </p>
         </motion.div>
 
