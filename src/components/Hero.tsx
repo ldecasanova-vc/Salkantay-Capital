@@ -122,9 +122,9 @@ export default function Hero() {
         >
           {/* Eyebrow */}
           <motion.div variants={itemVariants} className="flex items-center gap-4 mb-10">
-            <div className="w-10 h-px bg-white/30" />
+          
             <span className="text-white/40 text-[11px] tracking-[0.25em] uppercase font-medium">
-              Asset Management · Corporate Finance · Wealth Management
+              Asset Management - Corporate Finance - Wealth Management
             </span>
           </motion.div>
 
@@ -134,7 +134,7 @@ export default function Hero() {
             className="text-[clamp(42px,8vw,96px)] font-light text-white leading-[1.02] tracking-[-0.02em] mb-8"
           >
             An Integrated<br />
-            <span className="font-semibold italic">Capital</span><br />
+            <span className="font-semibold">Capital</span><br />
             <span className="font-light">Platform</span>
           </motion.h1>
 
@@ -143,8 +143,8 @@ export default function Hero() {
             variants={itemVariants}
             className="text-white/50 text-lg md:text-xl leading-relaxed max-w-xl mb-12 font-light"
           >
-            Three complementary divisions — Asset Management, Corporate Finance & Advisory,
-            and Wealth Management — serving institutional and private clients with discipline,
+            Three complementary divisions Asset Management, Corporate Finance & Advisory,
+            and Wealth Management. Serving institutional and private clients with discipline,
             precision and discretion.
           </motion.p>
 
