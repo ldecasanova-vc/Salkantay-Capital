@@ -182,7 +182,7 @@ export default function Divisions() {
             </div>
             <h2 className="text-[clamp(36px,5.5vw,64px)] font-light text-[#0B1F3B] leading-[1.05] tracking-[-0.02em]">
               Three divisions,<br />
-              <span className="font-semibold italic">one platform.</span>
+              <span className="font-semibold">one platform.</span>
             </h2>
           </div>
           <p className="text-gray-500 text-base max-w-sm leading-relaxed font-light md:text-right">

@@ -171,7 +171,7 @@ export default function Hero() {
             variants={itemVariants}
             className="border-t border-white/10 pt-10 grid grid-cols-3 gap-8 md:gap-20 max-w-xl"
           >
-            <AnimatedStat value={100} prefix="+$" suffix="M" label="Assets Under Management" />
+            <AnimatedStat value={140} prefix="+$" suffix="M" label="Assets Under Management" />
             <AnimatedStat value={10.6} prefix="+" suffix="%" label="Annual Return 2024" decimals={1} />
             <AnimatedStat value={20} prefix="+" suffix=" Yrs" label="Team Experience" />
           </motion.div>
