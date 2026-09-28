@@ -22,9 +22,12 @@ const cardVariants: Variants = {
 export default function Team() {
   const team = [
     {
-      name: "Martín Aspillaga",
+      name: "Martín Aspíllaga",
       role: "Partner",
-      bio: "20+ years in private equity and venture capital. Former Managing Partner at Enfoca (US$350M AUM). Co-Founder of Salkantay Ventures.",
+      bio: [
+        "Founding Partner and Managing Director of Salkantay, where he structured and raised Peru's first institutional venture capital fund. Before Salkantay he was Fund Manager at Enfoca, then Peru's largest private equity manager, running a US$350M portfolio across four companies and serving as CFO of Maestro during its turnaround, where he restructured a US$60M loan and closed a consumer finance joint venture.",
+        "Earlier he led M&A and strategy teams at Bain & Company in São Paulo, advising on a bank valued at US$500M and on joint ventures worth US$2.5B. MBA from Harvard Business School and economist from Universidad del Pacífico.",
+      ],
       image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/image-1761670210643.png?width=8000&height=8000&resize=contain",
       linkedin: "https://pe.linkedin.com/in/martinaspillaga",
       position: "object-[center_30%]",
@@ -32,7 +35,10 @@ export default function Team() {
     {
       name: "Guillermo Miró Quesada",
       role: "Partner",
-      bio: "20+ years in PE, VC and banking. Deep expertise in portfolio operations and capital markets. Co-founder of Salkantay and BLUM.",
+      bio: [
+        "Co-founder and Partner of Salkantay Ventures, where he has originated, negotiated and managed investments across more than twenty companies. He is also the founder of Blum, a mutual fund manager with more than US$120M in assets under management. Before Salkantay and Blum he was Vice President at Nexus Group, one of Peru's leading private equity firms, investing a US$320M fund, and served as CFO and Corporate Development Manager of Innova Schools.",
+        "Earlier he spent four years in New York at JP Morgan and Chase Securities, executing financings, acquisitions, valuations and private placements for private equity funds, on transactions of up to US$2.9B. Economist from Dartmouth College.",
+      ],
       image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/image-1761668998133.png?width=8000&height=8000&resize=contain",
       linkedin: "https://pe.linkedin.com/in/guillermomiroquesada",
       position: "object-[center_30%]",
@@ -77,14 +83,14 @@ export default function Team() {
             </h2>
           </div>
           <div className="md:col-span-5 md:pt-4">
-            <p className="text-gray-500 text-base leading-relaxed font-light max-w-md">
+            <p className="text-gray-500 text-[21px] leading-relaxed font-light max-w-md">
               A senior team with two decades of combined experience across investment management, capital markets and corporate transactions in Latin America and global markets.
             </p>
           </div>
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-gray-100 max-w-3xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-2 gap-px bg-gray-100 max-w-5xl mx-auto"
           variants={staggerVariants}
           initial="hidden"
           whileInView="visible"
@@ -109,10 +115,10 @@ export default function Team() {
               </div>
 
               {/* Info */}
-              <div className="p-7">
+              <div className="p-7 md:p-9">
                 <div className="flex items-start justify-between mb-4">
                   <div>
-                    <h3 className="text-base font-semibold text-[#0B1F3B] mb-1">{member.name}</h3>
+                    <h3 className="text-xl font-semibold text-[#0B1F3B] mb-1">{member.name}</h3>
                     <div className="text-[11px] text-[#0B1F3B]/40 uppercase tracking-[0.15em]">{member.role}</div>
                   </div>
                   {member.linkedin !== "#" && (
@@ -127,7 +133,13 @@ export default function Team() {
                   )}
                 </div>
                 <div className="w-8 h-px bg-[#C9A84C] mb-4" />
-                <p className="text-gray-500 text-sm leading-relaxed font-light">{member.bio}</p>
+                <div className="space-y-4">
+                  {member.bio.map((paragraph) => (
+                    <p key={paragraph} className="text-gray-500 text-lg leading-relaxed font-light">
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
               </div>
             </motion.div>
           ))}

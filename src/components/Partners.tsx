@@ -54,7 +54,7 @@ export default function Partners() {
             </h2>
           </div>
           <div className="md:col-span-5 md:pt-4">
-            <p className="text-gray-500 text-base leading-relaxed font-light max-w-md">
+            <p className="text-gray-500 text-[21px] leading-relaxed font-light max-w-md">
               We collaborate with leading custodians, banks, advisors and operating partners to deliver our mandates with the highest standards of execution and oversight.
             </p>
           </div>

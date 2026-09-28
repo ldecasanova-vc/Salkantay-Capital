@@ -80,29 +80,29 @@ export default function Footer() {
                 Let&apos;s Discuss<br />
                 <span className="font-semibold">Your Capital Strategy</span>
               </h2>
-              <p className="text-white/50 text-base leading-relaxed font-light mb-8 max-w-sm">
+              <p className="text-white/50 text-[21px] leading-relaxed font-light mb-8 max-w-md">
                 Request a detailed overview of our divisions or schedule a confidential consultation with our team.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center gap-3 text-white/60">
                   <Mail className="w-4 h-4 text-white/30" />
-                  <span className="text-sm">investors@salkantay.vc</span>
+                  <span className="text-lg">investors@salkantay.vc</span>
                 </div>
                 <div className="flex items-center gap-3 text-white/60">
                   <Phone className="w-4 h-4 text-white/30" />
-                  <span className="text-sm">+51 1 234 5678</span>
+                  <span className="text-lg">+51 1 234 5678</span>
                 </div>
                 <div className="flex items-center gap-3 text-white/60">
                   <MapPin className="w-4 h-4 text-white/30" />
-                  <span className="text-sm">Lima, Peru</span>
+                  <span className="text-lg">Lima, Peru</span>
                 </div>
               </div>
             </div>
 
             {/* Contact form */}
             <div className="border border-white/10 p-8">
-              <h3 className="text-lg font-semibold mb-2">Send Us a Message</h3>
-              <p className="text-white/50 text-sm leading-relaxed mb-6 font-light">
+              <h3 className="text-2xl font-semibold mb-2">Send Us a Message</h3>
+              <p className="text-white/50 text-lg leading-relaxed mb-6 font-light">
                 Tell us briefly how we can help. A member of our team will get back to you shortly.
               </p>
               <form onSubmit={handleSubmit} className="space-y-3">
@@ -139,7 +139,7 @@ export default function Footer() {
                   )}
                 </button>
               </form>
-              <p className="text-white/25 text-xs mt-4">
+              <p className="text-white/25 text-[15px] mt-4">
                 We respect your privacy. Your information is used only to respond to your inquiry.
               </p>
             </div>
@@ -163,7 +163,7 @@ export default function Footer() {
                   className="h-40 w-auto"
                 />
               </div>
-              <p className="text-white/40 text-xs leading-relaxed font-light mb-6">
+              <p className="text-white/40 text-[15px] leading-relaxed font-light mb-6">
                 An integrated capital platform: Asset Management, Corporate Finance & Advisory, and Wealth Management.
               </p>
               <div className="flex gap-4">
@@ -198,10 +198,10 @@ export default function Footer() {
       {/* Copyright */}
       <div className="px-6 lg:px-8 py-8">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-white/25 text-xs">
+          <p className="text-white/25 text-[15px]">
             © 2025 Salkantay Capital. All rights reserved.
           </p>
-          <p className="text-white/25 text-xs text-center md:text-right">
+          <p className="text-white/25 text-[15px] text-center md:text-right">
             Services offered to institutional, corporate and qualified private clients. Past performance is not indicative of future results.
           </p>
         </div>

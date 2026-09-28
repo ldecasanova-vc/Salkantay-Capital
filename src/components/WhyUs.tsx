@@ -35,7 +35,7 @@ export default function WhyUs() {
       number: "03",
       title: "Trust",
       description:
-        "Senior-level relationships, transparent reporting and the highest fiduciary standards — across every division.",
+        "Senior-level relationships, transparent reporting and the highest fiduciary standards across every division.",
     },
   ]
 
@@ -71,8 +71,8 @@ export default function WhyUs() {
             </h2>
           </div>
           <div className="md:col-span-5 md:pt-4">
-            <p className="text-gray-500 text-base leading-relaxed font-light max-w-md">
-              Three values that shape every mandate, every recommendation and every client relationship — across all of our divisions.
+            <p className="text-gray-500 text-[21px] leading-relaxed font-light max-w-md">
+              Three values that shape every mandate, every recommendation and every client relationship across all of our divisions.
             </p>
           </div>
         </motion.div>
@@ -98,7 +98,7 @@ export default function WhyUs() {
                 {v.title}
               </h3>
               <div className="w-10 h-px bg-[#C9A84C] mb-6" />
-              <p className="text-gray-500 text-base leading-relaxed font-light">
+              <p className="text-gray-500 text-[21px] leading-relaxed font-light">
                 {v.description}
               </p>
             </motion.div>
@@ -127,15 +127,15 @@ export default function WhyUs() {
                 Built on<br />
                 <span className="font-semibold">Trust & Transparency</span>
               </h3>
-              <p className="text-white/40 text-sm leading-relaxed font-light max-w-xs">
-                Across every division, we adhere to the highest standards of fiduciary responsibility and regulatory compliance — serving institutional, corporate and private clients alike.
+              <p className="text-white/40 text-lg leading-relaxed font-light max-w-sm">
+                Across every division, we adhere to the highest standards of fiduciary responsibility and regulatory compliance serving institutional, corporate and private clients alike.
               </p>
             </div>
             <div className="space-y-3.5">
               {credentials.map((c, i) => (
                 <div key={i} className="flex items-center gap-3">
                   <div className="w-1 h-1 rounded-full bg-[#C9A84C]/60 shrink-0" />
-                  <span className="text-white/50 text-sm font-light">{c}</span>
+                  <span className="text-white/50 text-lg font-light">{c}</span>
                 </div>
               ))}
             </div>

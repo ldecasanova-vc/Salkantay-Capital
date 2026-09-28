@@ -12,7 +12,7 @@ function useCounter(target: number, duration: number = 2) {
   return { count, ref, target, duration }
 }
 
-function AnimatedStat({
+export function AnimatedStat({
   value,
   label,
   prefix = "",
@@ -26,7 +26,14 @@ function AnimatedStat({
   decimals?: number
 }) {
   const rounded = useMotionValue(0)
-  const display = useTransform(rounded, (latest) => `${prefix}${latest.toFixed(decimals)}${suffix}`)
+  const display = useTransform(
+    rounded,
+    (latest) =>
+      `${prefix}${latest.toLocaleString("en-US", {
+        minimumFractionDigits: decimals,
+        maximumFractionDigits: decimals,
+      })}${suffix}`
+  )
   const hasAnimated = useRef(false)
 
   return (
@@ -124,28 +131,27 @@ export default function Hero() {
           <motion.div variants={itemVariants} className="flex items-center gap-4 mb-10">
           
             <span className="text-white/40 text-[11px] tracking-[0.25em] uppercase font-medium">
-              Asset Management - Corporate Finance - Wealth Management
+              Strategy - M&A Advisory - Investment
             </span>
           </motion.div>
 
           {/* Main headline — Apollo-scale */}
           <motion.h1
             variants={itemVariants}
-            className="text-[clamp(42px,8vw,96px)] font-light text-white leading-[1.02] tracking-[-0.02em] mb-8"
+            className="text-[clamp(28px,8vw,96px)] font-light text-white leading-[1.02] tracking-[-0.02em] mb-8"
           >
-            An Integrated<br />
-            <span className="font-semibold">Capital</span><br />
-            <span className="font-light">Platform</span>
+            An Investor&apos;s<br />
+            <span className="font-semibold">Perspective on Your</span><br />
+            <span className="font-light">Next Transaction</span>
           </motion.h1>
 
           {/* Subheadline */}
           <motion.p
             variants={itemVariants}
-            className="text-white/50 text-lg md:text-xl leading-relaxed max-w-xl mb-12 font-light"
+            className="text-white/50 text-[23px] md:text-[26px] leading-relaxed max-w-3xl mb-12 font-light"
           >
-            Three complementary divisions Asset Management, Corporate Finance & Advisory,
-            and Wealth Management. Serving institutional and private clients with discipline,
-            precision and discretion.
+            Real operational and investment experience across venture capital, private equity
+            and public markets, delivered by a lean and highly experienced team.
           </motion.p>
 
           {/* CTAs */}

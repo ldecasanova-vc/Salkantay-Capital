@@ -32,7 +32,7 @@ export default function InvestmentStrategy() {
       number: "02",
       title: "Integrated Platform",
       description:
-        "Our three divisions operate as one team — coordinating investment, advisory and execution across the entire client relationship.",
+        "Our three divisions operate as one team, coordinating investment, advisory and execution across the entire client relationship.",
     },
     {
       icon: Target,
@@ -75,8 +75,8 @@ export default function InvestmentStrategy() {
             </h2>
           </div>
           <div className="md:col-span-5 md:pt-4">
-            <p className="text-gray-500 text-base leading-relaxed font-light max-w-md">
-              Our approach is grounded in a few non-negotiable principles — applied consistently across Asset Management, Corporate Finance & Advisory, and Wealth Management.
+            <p className="text-gray-500 text-[21px] leading-relaxed font-light max-w-md">
+              Our approach is grounded in a few non-negotiable principles applied consistently across across all of our divisions.
             </p>
           </div>
         </motion.div>
@@ -106,10 +106,10 @@ export default function InvestmentStrategy() {
                   strokeWidth={1.5}
                 />
               </div>
-              <h3 className="text-base font-semibold text-[#0B1F3B] mb-3 leading-snug">
+              <h3 className="text-xl font-semibold text-[#0B1F3B] mb-3 leading-snug">
                 {pillar.title}
               </h3>
-              <p className="text-gray-500 text-sm leading-relaxed font-light">
+              <p className="text-gray-500 text-lg leading-relaxed font-light">
                 {pillar.description}
               </p>
             </motion.div>

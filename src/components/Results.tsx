@@ -33,7 +33,7 @@ function AnimatedNumber({
           animate(count, value, { duration: 2, ease: "easeOut" })
         }
       }}
-      className="text-5xl md:text-[64px] font-semibold text-[#0B1F3B] leading-none mb-3"
+      className="text-[clamp(32px,11vw,48px)] md:text-[64px] font-semibold text-[#0B1F3B] leading-none mb-3 whitespace-nowrap"
     >
       {display}
     </motion.div>
@@ -73,8 +73,8 @@ export default function Results() {
             </h2>
           </div>
           <div className="md:col-span-5 md:pt-4">
-            <p className="text-gray-500 text-base leading-relaxed font-light max-w-md">
-              A consistent record across investment strategies, advisory mandates and wealth solutions — reflecting the discipline applied throughout our platform.
+            <p className="text-gray-500 text-[21px] leading-relaxed font-light max-w-md">
+              A consistent record across investment strategies, advisory mandates and wealth solutions, reflecting the discipline applied throughout our platform.
             </p>
           </div>
         </motion.div>
@@ -88,7 +88,7 @@ export default function Results() {
           className="grid grid-cols-2 md:grid-cols-4 gap-px bg-gray-100"
         >
           {stats.map((stat) => (
-            <div key={stat.label} className="bg-white px-6 md:px-10 py-12 md:py-14">
+            <div key={stat.label} className="bg-white px-4 sm:px-6 md:px-10 py-12 md:py-14">
               <AnimatedNumber
                 value={stat.value}
                 prefix={stat.prefix}
@@ -108,7 +108,7 @@ export default function Results() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
-          className="text-[11px] text-gray-400 mt-8 tracking-wide max-w-3xl"
+          className="text-sm text-gray-400 mt-8 tracking-wide max-w-3xl"
         >
           Past performance is not indicative of future results. Strategy-specific figures available upon request to qualified investors.
         </motion.p>
