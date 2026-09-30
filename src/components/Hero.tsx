@@ -1,57 +1,7 @@
 "use client"
 
-import { motion, Variants, useMotionValue, useTransform, animate } from "framer-motion"
-import { ArrowRight, FileText } from "lucide-react"
-import { useEffect, useRef } from "react"
+import { motion, Variants } from "framer-motion"
 import Image from "next/image"
-
-// Animated counter hook
-function useCounter(target: number, duration: number = 2) {
-  const count = useMotionValue(0)
-  const ref = useRef(false)
-  return { count, ref, target, duration }
-}
-
-export function AnimatedStat({
-  value,
-  label,
-  prefix = "",
-  suffix = "",
-  decimals = 0,
-}: {
-  value: number
-  label: string
-  prefix?: string
-  suffix?: string
-  decimals?: number
-}) {
-  const rounded = useMotionValue(0)
-  const display = useTransform(
-    rounded,
-    (latest) =>
-      `${prefix}${latest.toLocaleString("en-US", {
-        minimumFractionDigits: decimals,
-        maximumFractionDigits: decimals,
-      })}${suffix}`
-  )
-  const hasAnimated = useRef(false)
-
-  return (
-    <motion.div
-      onViewportEnter={() => {
-        if (!hasAnimated.current) {
-          hasAnimated.current = true
-          animate(rounded, value, { duration: 2, ease: "easeOut" })
-        }
-      }}
-    >
-      <motion.div className="text-3xl md:text-4xl font-semibold text-white mb-1">
-        {display}
-      </motion.div>
-      <div className="text-white/35 text-[11px] tracking-[0.18em] uppercase">{label}</div>
-    </motion.div>
-  )
-}
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -65,7 +15,7 @@ const itemVariants: Variants = {
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center bg-[#070D1A] overflow-hidden">
+    <section className="relative min-h-screen pt-20 flex items-center bg-[#070D1A] overflow-hidden">
 
       {/* Background: Salkantay Mountain Image */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -120,66 +70,46 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative w-full max-w-7xl mx-auto px-6 lg:px-8 py-36">
+      <div className="relative w-full max-w-7xl mx-auto px-6 lg:px-8 py-16 md:py-24">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="max-w-5xl"
+          className="w-full"
         >
           {/* Eyebrow */}
-          <motion.div variants={itemVariants} className="flex items-center gap-4 mb-10">
+          <motion.div variants={itemVariants} className="flex items-center gap-4 mb-14">
           
-            <span className="text-white/40 text-[11px] tracking-[0.25em] uppercase font-medium">
-              Strategy - M&A Advisory - Investment
+            <span className="text-white/40 text-xs tracking-[0.25em] uppercase font-medium">
+              Strategy - M&A Advisory - Wealth
             </span>
           </motion.div>
 
           {/* Main headline — Apollo-scale */}
           <motion.h1
             variants={itemVariants}
-            className="text-[clamp(28px,8vw,96px)] font-light text-white leading-[1.02] tracking-[-0.02em] mb-8"
+            className="text-[clamp(48px,9vw,120px)] font-light text-white leading-[1.02] tracking-[-0.02em] mb-8"
           >
-            An Investor&apos;s<br />
-            <span className="font-semibold">Perspective on Your</span><br />
-            <span className="font-light">Next Transaction</span>
+            The Investor&apos;s Eye,<br />
+            <span className="font-semibold">on the Owner&apos;s Side.</span>
           </motion.h1>
 
           {/* Subheadline */}
           <motion.p
             variants={itemVariants}
-            className="text-white/50 text-[23px] md:text-[26px] leading-relaxed max-w-3xl mb-12 font-light"
+            className="text-white/50 text-[clamp(23px,2vw,30px)] leading-relaxed max-w-4xl mb-12 font-light"
           >
-            Real operational and investment experience across venture capital, private equity
-            and public markets, delivered by a lean and highly experienced team.
+            Think like an investor. Build like an operator. Close like a founder.
           </motion.p>
 
           {/* CTAs */}
-          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 mb-24">
+          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4">
             <button
               onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-              className="group inline-flex items-center gap-3 bg-white text-[#070D1A] px-8 py-4 text-xs font-semibold tracking-[0.15em] uppercase hover:bg-gray-100 transition-colors duration-200"
-            >
-              <FileText className="w-3.5 h-3.5" />
-              Request Prospectus
-              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-            </button>
-            <button
-              onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-              className="inline-flex items-center gap-3 border border-white/25 text-white/70 px-8 py-4 text-xs font-medium tracking-[0.15em] uppercase hover:border-white/50 hover:text-white transition-all duration-200"
+              className="inline-flex items-center justify-center gap-3 border border-white/25 text-white/70 px-12 py-5 text-xs font-medium tracking-[0.15em] uppercase hover:border-white/50 hover:text-white transition-all duration-200"
             >
               Schedule a Meeting
             </button>
-          </motion.div>
-
-          {/* Animated stats */}
-          <motion.div
-            variants={itemVariants}
-            className="border-t border-white/10 pt-10 grid grid-cols-3 gap-8 md:gap-20 max-w-xl"
-          >
-            <AnimatedStat value={140} prefix="+$" suffix="M" label="Assets Under Management" />
-            <AnimatedStat value={10.6} prefix="+" suffix="%" label="Annual Return 2024" decimals={1} />
-            <AnimatedStat value={20} prefix="+" suffix=" Yrs" label="Team Experience" />
           </motion.div>
         </motion.div>
       </div>

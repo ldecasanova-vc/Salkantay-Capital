@@ -18,28 +18,24 @@ export default function WealthPage() {
           services: [
             {
               icon: "compass",
-              tag: "Counsel · Retainer",
               name: "Investment Counsel",
               description:
-                "Independent advice on asset allocation and portfolio decisions for families and private investors.",
+                "Ongoing access to a senior partner on allocation and portfolio decisions.",
             },
             {
               icon: "users",
-              tag: "Fractional · Embedded role",
               name: "Fractional CIO / Family Office",
               description:
-                "A senior investment lead embedded in your family office, overseeing managers, allocation and reporting.",
+                "The investment discipline of an institutional CIO, applied to the oversight of your portfolio.",
             },
             {
               icon: "scanSearch",
-              tag: "Plan · Project",
               name: "Liquidity & Legacy Plan",
               description:
-                "A plan for what comes after a liquidity event: structuring, allocation and the transition to the next generation.",
+                "A structured plan for the capital that follows a liquidity event: allocation, structuring and the transition to the next generation.",
             },
             {
               icon: "handshake",
-              tag: "Execute · Transaction",
               name: "Access to VC & Alternatives",
               description: (
                 <>
@@ -68,7 +64,6 @@ export default function WealthPage() {
           ],
         },
       ]}
-      externalCta={{ label: "Visit Salkantay Ventures", href: "https://www.salkantay.vc/" }}
     />
   )
 }

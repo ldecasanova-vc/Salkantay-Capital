@@ -11,9 +11,31 @@ const inter = Inter({
   display: "swap",
 });
 
+const siteUrl = "https://salkantay-capital.vercel.app";
+const siteTitle = "Salkantay Capital | Strategy · M&A Advisory · Wealth";
+const siteDescription =
+  "The investor's eye, on the owner's side. Strategy, M&A advisory and wealth management";
+const siteImage = { url: "/Mountain.jpg", width: 1200, height: 630, alt: "Salkantay Mountain" };
+
 export const metadata: Metadata = {
-  title: "Salkantay Capital | Asset Management · Corporate Finance · Wealth Management",
-  description: "An integrated platform across Asset Management, Corporate Finance & Advisory, and Wealth Management for institutional and private investors.",
+  // Resolves relative image paths into absolute URLs for social previews
+  metadataBase: new URL(siteUrl),
+  title: siteTitle,
+  description: siteDescription,
+  openGraph: {
+    title: siteTitle,
+    description: siteDescription,
+    url: siteUrl,
+    siteName: "Salkantay Capital",
+    type: "website",
+    images: [siteImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteTitle,
+    description: siteDescription,
+    images: [siteImage.url],
+  },
 };
 
 export default function RootLayout({

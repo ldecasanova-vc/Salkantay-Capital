@@ -38,7 +38,7 @@ export default function Navigation() {
   const serviceLinks = [
     { name: "Strategy", href: "/strategy" },
     { name: "M&A Advisory", href: "/ma" },
-    { name: "Investment", href: "/investment" },
+    { name: "Wealth", href: "/wealth" },
   ]
 
   const navLinks = [

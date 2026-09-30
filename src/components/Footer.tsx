@@ -32,7 +32,7 @@ export default function Footer() {
       links: [
         { label: "Strategy", href: "/strategy" },
         { label: "M&A Advisory", href: "/ma" },
-        { label: "Investment", href: "/investment" },
+        { label: "Wealth", href: "/wealth" },
       ],
     },
     {
@@ -164,7 +164,7 @@ export default function Footer() {
                 />
               </div>
               <p className="text-white/40 text-[15px] leading-relaxed font-light mb-6">
-                An integrated capital platform: Strategy, M&A Advisory and Investment.
+                An integrated capital platform: Strategy, M&A Advisory and Wealth.
               </p>
               <div className="flex gap-4">
                 <a

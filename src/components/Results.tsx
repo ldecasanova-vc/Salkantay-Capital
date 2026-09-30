@@ -42,10 +42,9 @@ function AnimatedNumber({
 
 export default function Results() {
   const stats = [
-    { value: 140, prefix: "+$", suffix: "M", label: "Assets Under\nManagement", decimals: 0 },
-    { value: 20, prefix: "", suffix: "+", label: "Years Combined\nExperience", decimals: 0 },
-    { value: 3, prefix: "", suffix: "", label: "Integrated\nDivisions", decimals: 0 },
-    { value: 10.6, prefix: "+", suffix: "%", label: "Annual Return\n(2024)", decimals: 1 },
+    { value: 600, prefix: "$", suffix: "M+", label: "In VC and PE\nTransactions", decimals: 0 },
+    { value: 10, prefix: "", suffix: "", label: "Funds\nLaunched", decimals: 0 },
+    { value: 150, prefix: "$", suffix: "M", label: "Assets Under\nManagement", decimals: 0 },
   ]
 
   return (
@@ -85,7 +84,7 @@ export default function Results() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-px bg-gray-100"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-gray-100"
         >
           {stats.map((stat) => (
             <div key={stat.label} className="bg-white px-4 sm:px-6 md:px-10 py-12 md:py-14">
@@ -103,15 +102,7 @@ export default function Results() {
           ))}
         </motion.div>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
-          className="text-sm text-gray-400 mt-8 tracking-wide max-w-3xl"
-        >
-          Past performance is not indicative of future results. Strategy-specific figures available upon request to qualified investors.
-        </motion.p>
+        
       </div>
     </section>
   )

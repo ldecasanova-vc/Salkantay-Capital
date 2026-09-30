@@ -16,23 +16,23 @@ const divisions: Division[] = [
   {
     number: "01",
     title: "Strategy",
-    tagline: "Investment strategy built and managed by Blum, our fund manager.",
-    services: ["Blum"],
+    tagline: "Senior strategic counsel for owners and management teams, from diagnostic to execution.",
+    services: ["Strategy Counsel", "Fractional CSO", "Strategic Diagnostic & Plan", "Value Creation Program"],
     href: "/strategy",
   },
   {
     number: "02",
     title: "M&A Advisory",
-    tagline: "Advisory for mid-market companies across Peru and the Andean region.",
-    services: ["M&A Coach", "M&A Oversight", "Plan for Exit", "M&A Engagement"],
+    tagline: "Advisory for mid-market companies across Peru and Latin America.",
+    services: ["Deal Counsel", "Fractional Head of M&A", "Exit Readiness", "Sell-side / Buy-side / Capital Raising"],
     href: "/ma",
   },
   {
     number: "03",
-    title: "Investment",
-    tagline: "Early-stage venture capital for Latin American founders.",
-    services: ["Venture Capital"],
-    href: "/investment",
+    title: "Wealth",
+    tagline: "Investment counsel and access to private markets for families and private investors.",
+    services: ["Investment Counsel", "Fractional CIO / Family Office", "Liquidity & Legacy Plan", "Access to VC & Alternatives"],
+    href: "/wealth",
   },
 ]
 
@@ -77,7 +77,7 @@ export default function Divisions() {
             </h2>
           </div>
           <p className="text-gray-500 text-[21px] max-w-md leading-relaxed font-light md:text-right">
-            Explore the services we offer across Strategy, M&A Advisory and Investment.
+            Explore the services we offer across Strategy, M&A Advisory and Wealth.
           </p>
         </motion.div>
 
@@ -95,7 +95,7 @@ export default function Divisions() {
               variants={itemVariants}
               className="bg-white p-10 md:p-12 flex flex-col hover:bg-[#EEF2F7] transition-colors duration-300"
             >
-              <div className="text-[11px] font-medium text-[#0B1F3B]/30 tracking-[0.18em] uppercase mb-8">
+              <div className="text-xs font-medium text-[#0B1F3B]/30 tracking-[0.18em] uppercase mb-8">
                 {division.number}
               </div>
               <h3 className="text-3xl md:text-[40px] font-light text-[#0B1F3B] leading-[1.1] tracking-tight mb-6">

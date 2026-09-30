@@ -3,52 +3,46 @@ import DivisionPage from "@/components/DivisionPage"
 
 export const metadata: Metadata = {
   title: "Strategy | Salkantay Capital",
-  description: "Investment strategy built and managed by Blum, our fund manager.",
+  description:
+    "Senior strategic counsel for owners and management teams, from the first diagnostic to execution.",
 }
 
 export default function StrategyPage() {
   return (
     <DivisionPage
-      eyebrow="Strategy"
-      title="Blum"
-      subtitle="Investment strategy built and managed by Blum, our fund manager."
-      stats={[
-        { value: 120, prefix: "US$", suffix: "M", label: "Assets Under Management" },
-        { value: 7, prefix: "US$", suffix: "B", label: "Managed by the Team" },
-        { value: 10, label: "Mutual Funds" },
-      ]}
-      intro="Blum is our independent fund manager, regulated by the SMV. Ten mutual funds in soles and dollars, managed by a team that has run over US$7B in investments."
+      eyebrow="Salkantay Capital"
+      title="Strategy"
+      subtitle="Senior strategic counsel for owners and management teams, from the first diagnostic to execution."
       groups={[
         {
           services: [
             {
-              icon: "banknote",
-              name: "Cash and Money Market",
+              icon: "compass",
+              name: "Strategy Counsel",
               description:
-                "Short-term funds in soles and dollars for liquidity, with daily availability.",
+                "Ongoing access to a senior partner for the decisions that shape the business.",
             },
             {
-              icon: "globe",
-              name: "Global Bonds",
+              icon: "users",
+              name: "Fractional CSO",
               description:
-                "Fixed income exposure to international markets, from investment grade to global credit.",
+                "A senior strategy lead embedded part-time in your management team.",
             },
             {
-              icon: "trendingUp",
-              name: "Global Equities",
+              icon: "scanSearch",
+              name: "Strategic Diagnostic & Plan",
               description:
-                "Diversified equity exposure to global markets, including US large caps.",
+                "A structured assessment of the business, its performance and its market, delivered as a strategic roadmap for the period ahead.",
             },
             {
-              icon: "layers",
-              name: "Private Debt",
+              icon: "handshake",
+              name: "Value Creation Program",
               description:
-                "Access to private credit strategies, previously reserved for institutional investors.",
+                "We work with your team on the initiatives that move enterprise value: pricing, growth, efficiency and capital structure.",
             },
           ],
         },
       ]}
-      externalCta={{ label: "Visit Blum", href: "https://www.miblum.com/" }}
     />
   )
 }

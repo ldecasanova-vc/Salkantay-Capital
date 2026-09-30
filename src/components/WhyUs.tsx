@@ -127,15 +127,15 @@ export default function WhyUs() {
                 Built on<br />
                 <span className="font-semibold">Trust & Transparency</span>
               </h3>
-              <p className="text-white/40 text-lg leading-relaxed font-light max-w-sm">
+              <p className="text-white/75 text-lg leading-relaxed max-w-sm">
                 Across every division, we adhere to the highest standards of fiduciary responsibility and regulatory compliance serving institutional, corporate and private clients alike.
               </p>
             </div>
             <div className="space-y-3.5">
               {credentials.map((c, i) => (
                 <div key={i} className="flex items-center gap-3">
-                  <div className="w-1 h-1 rounded-full bg-[#C9A84C]/60 shrink-0" />
-                  <span className="text-white/50 text-lg font-light">{c}</span>
+                  <div className="w-1 h-1 rounded-full bg-[#C9A84C] shrink-0" />
+                  <span className="text-white/80 text-lg">{c}</span>
                 </div>
               ))}
             </div>

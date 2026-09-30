@@ -10,67 +10,37 @@ export const metadata: Metadata = {
 export default function MAPage() {
   return (
     <DivisionPage
-      eyebrow="Corporate Finance & Advisory"
+      eyebrow="Salkantay Capital"
       title="M&A Advisory"
-      subtitle="We advise owners and management teams of mid-market companies across Peru and the Andean region, from the first strategic conversation to the closing of the transaction."
+      subtitle="We advise owners and management teams of mid-market companies across Peru and Latin America, from the first strategic conversation to the closing of the transaction."
       groups={[
         {
-          title: "Understand and Formulate",
-          duration: "3 to 6 months",
           services: [
             {
               icon: "compass",
-              name: "M&A Coach",
+              name: "Deal Counsel",
               description:
-                "Market research, strategic position and an initial roadmap, plus working sessions with you to pressure test every decision along the way.",
+                "Ongoing access to a senior partner while your team runs the transaction.",
+            },
+            {
+              icon: "users",
+              name: "Fractional Head of M&A",
+              description:
+                "A senior M&A lead embedded part-time to steer the process alongside management.",
             },
             {
               icon: "scanSearch",
-              name: "M&A Oversight",
+              name: "Exit Readiness",
               description:
-                "We value the company standalone and at full potential, benchmark it against transaction multiples and set the roadmap. From there we coordinate counterparties and keep the process on track, without taking over its execution.",
-            },
-          ],
-        },
-        {
-          title: "Path Forward",
-          duration: "1 to 2 years",
-          services: [
-            {
-              icon: "trendingUp",
-              name: "Plan for Exit",
-              description:
-                "A seat on the board for one to two years, shaping the value creation plan and the route to a sale or a capital raise before the process begins.",
+                "An assessment of how the business will be read by an acquirer, delivered as a plan to close the gaps before the process starts.",
             },
             {
               icon: "handshake",
-              name: "M&A Engagement",
+              name: "Sell-side / Buy-side / Capital Raising",
               description:
-                "We value the company, set up the data room and lead the execution team of lawyers, consultants and advisors through negotiation to closing.",
+                "Full execution of the transaction: valuation, data room, counterparty outreach and negotiation through to closing.",
             },
           ],
-        },
-      ]}
-      steps={[
-        {
-          title: "Diagnose",
-          description:
-            "We read the business, its numbers and its market to frame the real decision behind the transaction.",
-        },
-        {
-          title: "Prepare",
-          description:
-            "Financial model, valuation and data room built to withstand a counterparty's scrutiny.",
-        },
-        {
-          title: "Execute",
-          description:
-            "Buyer or investor outreach under confidentiality, negotiation and coordination of the full execution team.",
-        },
-        {
-          title: "Close",
-          description:
-            "Final terms, closing documentation and the transition into the new ownership or capital structure.",
         },
       ]}
     />
