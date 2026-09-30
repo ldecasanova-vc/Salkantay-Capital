@@ -48,16 +48,7 @@ export default function WealthPage() {
                   >
                     Salkantay Ventures
                   </a>
-                  , our early-stage fund, and{" "}
-                  <a
-                    href="https://www.miblum.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline underline-offset-4 hover:text-[#C9A84C] transition-colors duration-300"
-                  >
-                    Blum
-                  </a>
-                  , our fund manager.
+                  , our early-stage fund.
                 </>
               ),
             },

@@ -70,7 +70,7 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative w-full max-w-7xl mx-auto px-6 lg:px-8 py-16 md:py-24">
+      <div className="relative w-full max-w-7xl mx-auto px-6 lg:px-8 py-10 md:py-12">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -78,28 +78,38 @@ export default function Hero() {
           className="w-full"
         >
           {/* Eyebrow */}
-          <motion.div variants={itemVariants} className="flex items-center gap-4 mb-14">
+          <motion.div variants={itemVariants} className="flex items-center gap-4 mb-10">
           
             <span className="text-white/40 text-xs tracking-[0.25em] uppercase font-medium">
               Strategy - M&A Advisory - Wealth
             </span>
           </motion.div>
 
-          {/* Main headline — Apollo-scale */}
+          {/* Main headline — below md, sized so each sentence (≈9.55em wide) fits on one line */}
           <motion.h1
             variants={itemVariants}
-            className="text-[clamp(48px,9vw,120px)] font-light text-white leading-[1.02] tracking-[-0.02em] mb-8"
+            className="text-[length:calc((100vw_-_3rem)/9.7)] md:text-[clamp(40px,5.6vw,88px)] font-light text-white leading-[1.02] tracking-[-0.02em] mb-8"
           >
-            The Investor&apos;s Eye,<br />
-            <span className="font-semibold">on the Owner&apos;s Side.</span>
+            Think like an investor.<br />
+            Build like an operator.<br />
+            <span className="font-semibold">Close like a founder.</span>
           </motion.h1>
+
+          {/* Tagline */}
+          <motion.p
+            variants={itemVariants}
+            className="text-white/80 text-[clamp(23px,2vw,30px)] leading-snug font-light mb-4"
+          >
+            An Investor&apos;s Eye, on the Owner&apos;s Side.
+          </motion.p>
 
           {/* Subheadline */}
           <motion.p
             variants={itemVariants}
-            className="text-white/50 text-[clamp(23px,2vw,30px)] leading-relaxed max-w-4xl mb-12 font-light"
+            className="text-white/50 text-[clamp(23px,2vw,30px)] leading-relaxed max-w-4xl mb-10 font-light"
           >
-            Think like an investor. Build like an operator. Close like a founder.
+            Real operational and investment experience across venture capital, private equity
+            and public markets, delivered by a lean and highly experienced team.
           </motion.p>
 
           {/* CTAs */}
