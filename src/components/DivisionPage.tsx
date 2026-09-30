@@ -1,5 +1,6 @@
 "use client"
 
+import type { ReactNode } from "react"
 import { motion, Variants } from "framer-motion"
 import {
   ArrowRight,
@@ -9,9 +10,10 @@ import {
   Globe,
   Handshake,
   Layers,
-  Rocket,
+  Network,
   ScanSearch,
   TrendingUp,
+  Users,
 } from "lucide-react"
 import Navigation from "@/components/Navigation"
 import Footer from "@/components/Footer"
@@ -24,9 +26,10 @@ const icons = {
   globe: Globe,
   handshake: Handshake,
   layers: Layers,
-  rocket: Rocket,
+  network: Network,
   scanSearch: ScanSearch,
   trendingUp: TrendingUp,
+  users: Users,
 }
 
 export type Service = {
@@ -55,11 +58,6 @@ export type Step = {
   description: string
 }
 
-export type Highlight = {
-  title: string
-  description: string
-}
-
 export type ExternalCta = {
   label: string
   href: string
@@ -73,8 +71,9 @@ type DivisionPageProps = {
   steps?: Step[]
   stats?: Stat[]
   intro?: string
-  highlights?: Highlight[]
   externalCta?: ExternalCta
+  // Page-specific sections, rendered between the shared sections and the closing CTA
+  children?: ReactNode
 }
 
 const sectionVariants: Variants = {
@@ -138,8 +137,8 @@ export default function DivisionPage({
   steps,
   stats,
   intro,
-  highlights,
   externalCta,
+  children,
 }: DivisionPageProps) {
   return (
     <div className="min-h-screen">
@@ -219,7 +218,11 @@ export default function DivisionPage({
                 whileInView="visible"
                 viewport={{ once: true, margin: "-80px" }}
                 className={`grid grid-cols-1 gap-px bg-gray-200 ${
-                  group.services.length > 1 ? "sm:grid-cols-2" : "max-w-xl"
+                  group.services.length === 3
+                    ? "md:grid-cols-3"
+                    : group.services.length > 1
+                      ? "sm:grid-cols-2"
+                      : "max-w-xl"
                 }`}
               >
                 {group.services.map((service) => (
@@ -279,33 +282,7 @@ export default function DivisionPage({
         </section>
       )}
 
-      {/* Highlights */}
-      {highlights && (
-        <section className="bg-[#F7F9FC] py-32 px-6 lg:px-8">
-          <motion.div
-            variants={staggerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-80px" }}
-            className="max-w-7xl mx-auto grid md:grid-cols-3 gap-px bg-gray-200"
-          >
-            {highlights.map((h, i) => (
-              <motion.div key={h.title} variants={itemVariants} className="bg-white p-10 md:p-12">
-                <div className="text-[11px] font-medium text-[#0B1F3B]/30 tracking-[0.18em] uppercase mb-8">
-                  {String(i + 1).padStart(2, "0")}
-                </div>
-                <h3 className="text-3xl md:text-[40px] font-light text-[#0B1F3B] leading-[1.1] tracking-tight mb-6">
-                  {h.title}
-                </h3>
-                <div className="w-10 h-px bg-[#C9A84C] mb-6" />
-                <p className="text-gray-500 text-[21px] leading-relaxed font-light">
-                  {h.description}
-                </p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </section>
-      )}
+      {children}
 
       {/* Closing CTA */}
       <section className="bg-white py-24 px-6 lg:px-8 border-t border-gray-200">

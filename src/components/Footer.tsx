@@ -28,21 +28,21 @@ export default function Footer() {
 
   const footerLinks = [
     {
-      heading: "Divisions",
+      heading: "Services",
       links: [
-        { label: "Asset Management", href: "#services" },
-        { label: "Corporate Finance & Advisory", href: "#services" },
-        { label: "Wealth Management", href: "#services" },
-        { label: "How We Do It", href: "#approach" },
+        { label: "Strategy", href: "/strategy" },
+        { label: "M&A Advisory", href: "/ma" },
+        { label: "Investment", href: "/investment" },
       ],
     },
     {
       heading: "Firm",
       links: [
-        { label: "Our Results", href: "#results" },
-        { label: "Our Values", href: "#values" },
-        { label: "Our Team", href: "#team" },
-        { label: "Partners & Allies", href: "#partners" },
+        { label: "How We Do It", href: "/#approach" },
+        { label: "Our Results", href: "/#results" },
+        { label: "Our Values", href: "/#values" },
+        { label: "Our Team", href: "/#team" },
+        { label: "Partners & Allies", href: "/#partners" },
       ],
     },
     {
@@ -81,7 +81,7 @@ export default function Footer() {
                 <span className="font-semibold">Your Capital Strategy</span>
               </h2>
               <p className="text-white/50 text-[21px] leading-relaxed font-light mb-8 max-w-md">
-                Request a detailed overview of our divisions or schedule a confidential consultation with our team.
+                Request a detailed overview of our services or schedule a confidential consultation with our team.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center gap-3 text-white/60">
@@ -164,10 +164,15 @@ export default function Footer() {
                 />
               </div>
               <p className="text-white/40 text-[15px] leading-relaxed font-light mb-6">
-                An integrated capital platform: Asset Management, Corporate Finance & Advisory, and Wealth Management.
+                An integrated capital platform: Strategy, M&A Advisory and Investment.
               </p>
               <div className="flex gap-4">
-                <a href="#" className="text-white/30 hover:text-white/60 transition-colors">
+                <a
+                  href="https://www.linkedin.com/company/salkantay-capital/home/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/30 hover:text-white/60 transition-colors"
+                >
                   <Linkedin className="w-4 h-4" />
                 </a>
               </div>
@@ -199,7 +204,7 @@ export default function Footer() {
       <div className="px-6 lg:px-8 py-8">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-white/25 text-[15px]">
-            © 2025 Salkantay Capital. All rights reserved.
+            © 2026 Salkantay Capital. All rights reserved.
           </p>
           <p className="text-white/25 text-[15px] text-center md:text-right">
             Services offered to institutional, corporate and qualified private clients. Past performance is not indicative of future results.

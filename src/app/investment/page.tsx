@@ -1,5 +1,7 @@
 import type { Metadata } from "next"
 import DivisionPage from "@/components/DivisionPage"
+import Partners from "@/components/Partners"
+import { InvestmentThesis, Portfolio } from "@/components/VenturesSections"
 
 export const metadata: Metadata = {
   title: "Investment | Salkantay Capital",
@@ -9,8 +11,8 @@ export const metadata: Metadata = {
 export default function InvestmentPage() {
   return (
     <DivisionPage
-      eyebrow="Salkantay Ventures"
-      title="Investment"
+      eyebrow="Investment"
+      title="Salkantay Ventures"
       subtitle="Early-stage venture capital for Latin American founders."
       stats={[
         { value: 26, prefix: "US$", suffix: "M", label: "Assets Under Management" },
@@ -19,17 +21,45 @@ export default function InvestmentPage() {
       ]}
       groups={[
         {
+          title: "Beyond capital",
           services: [
             {
-              icon: "rocket",
-              name: "Venture Capital",
+              icon: "compass",
+              name: "Strategy",
               description:
-                "We back founders using technology to close gaps in the region, across three pillars: human improvement, with edtech, jobtech and healthtech; economic development, with fintech, proptech and SaaS; and a sustainable planet, with agtech, climate tech and smart cities. Beyond capital, we work as a hands-on partner on strategy, talent and access to a global network.",
-              href: "https://www.salkantay.vc/",
+                "We sit with founders on the decisions that define the next stage: pricing, expansion, capital structure and exit.",
+            },
+            {
+              icon: "users",
+              name: "Talent",
+              description:
+                "Access to our network for the hires that change a company's trajectory, from senior leadership to board members.",
+            },
+            {
+              icon: "network",
+              name: "Network",
+              description:
+                "Introductions to investors, corporates and operators across the region and beyond, when the company is ready for them.",
             },
           ],
         },
       ]}
-    />
+      externalCta={{ label: "Visit Salkantay Ventures", href: "https://www.salkantay.vc/" }}
+    >
+      <InvestmentThesis />
+      <Portfolio />
+      <Partners
+        id="backed-by"
+        eyebrow="Backed By"
+        title={
+          <>
+            Backed by leading<br />
+            <span className="font-semibold">development finance institutions</span>
+          </>
+        }
+        description={null}
+        footnote={null}
+      />
+    </DivisionPage>
   )
 }

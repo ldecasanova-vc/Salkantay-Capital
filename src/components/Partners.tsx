@@ -1,5 +1,6 @@
 "use client"
 
+import type { ReactNode } from "react"
 import { motion, Variants } from "framer-motion"
 
 const sectionVariants: Variants = {
@@ -17,7 +18,26 @@ const itemVariants: Variants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
 }
 
-export default function Partners() {
+type PartnersProps = {
+  id?: string
+  eyebrow?: string
+  title?: ReactNode
+  description?: string | null
+  footnote?: string | null
+}
+
+export default function Partners({
+  id = "partners",
+  eyebrow = "Our Partners & Allies",
+  title = (
+    <>
+      The institutions<br />
+      <span className="font-semibold">we work with.</span>
+    </>
+  ),
+  description = "We collaborate with leading custodians, banks, advisors and operating partners to deliver our mandates with the highest standards of execution and oversight.",
+  footnote = "A network spanning institutional, corporate and private wealth services",
+}: PartnersProps) {
   // Logos render in monochrome at rest, full color on hover.
   // To add a partner: drop the file in /public and add an entry below.
   // Use `imgClass` to override the default sizing for a specific logo.
@@ -30,7 +50,7 @@ export default function Partners() {
   ] as { name: string; logo: string | null; imgClass?: string }[]
 
   return (
-    <section id="partners" className="bg-[#F7F9FC] py-32 px-6 lg:px-8">
+    <section id={id} className="bg-[#F7F9FC] py-32 px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
 
         {/* Editorial heading */}
@@ -45,19 +65,20 @@ export default function Partners() {
             <div className="flex items-center gap-3 mb-6">
               <div className="w-8 h-px bg-[#0B1F3B]" />
               <span className="text-[#0B1F3B]/40 text-[11px] tracking-[0.22em] uppercase font-medium">
-                Our Partners & Allies
+                {eyebrow}
               </span>
             </div>
             <h2 className="text-4xl md:text-[56px] font-light text-[#0B1F3B] leading-[1.05] tracking-tight">
-              The institutions<br />
-              <span className="font-semibold">we work with.</span>
+              {title}
             </h2>
           </div>
-          <div className="md:col-span-5 md:pt-4">
-            <p className="text-gray-500 text-[21px] leading-relaxed font-light max-w-md">
-              We collaborate with leading custodians, banks, advisors and operating partners to deliver our mandates with the highest standards of execution and oversight.
-            </p>
-          </div>
+          {description && (
+            <div className="md:col-span-5 md:pt-4">
+              <p className="text-gray-500 text-[21px] leading-relaxed font-light max-w-md">
+                {description}
+              </p>
+            </div>
+          )}
         </motion.div>
 
         {/* Logo grid */}
@@ -91,18 +112,20 @@ export default function Partners() {
         </motion.div>
 
         {/* Bottom label */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
-          className="mt-12 flex items-center gap-3"
-        >
-          <div className="w-8 h-px bg-[#0B1F3B]/20" />
-          <span className="text-[#0B1F3B]/40 text-[11px] tracking-[0.18em] uppercase">
-            A network spanning institutional, corporate and private wealth services
-          </span>
-        </motion.div>
+        {footnote && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+            className="mt-12 flex items-center gap-3"
+          >
+            <div className="w-8 h-px bg-[#0B1F3B]/20" />
+            <span className="text-[#0B1F3B]/40 text-[11px] tracking-[0.18em] uppercase">
+              {footnote}
+            </span>
+          </motion.div>
+        )}
       </div>
     </section>
   )

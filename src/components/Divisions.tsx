@@ -16,7 +16,7 @@ const divisions: Division[] = [
   {
     number: "01",
     title: "Strategy",
-    tagline: "Investment strategy built and managed by Blum, our digital fund manager.",
+    tagline: "Investment strategy built and managed by Blum, our fund manager.",
     services: ["Blum"],
     href: "/strategy",
   },
