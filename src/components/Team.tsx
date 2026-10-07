@@ -3,6 +3,7 @@
 import { motion, Variants } from "framer-motion"
 import { Linkedin } from "lucide-react"
 import Image from "next/image"
+import { useState } from "react"
 
 const sectionVariants: Variants = {
   hidden: { opacity: 0, y: 32 },
@@ -19,8 +20,81 @@ const cardVariants: Variants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 }
 
+type TeamMember = {
+  name: string
+  role: string
+  bio: string[]
+  image: string
+  linkedin: string
+  position: string
+}
+
+function TeamCard({ member }: { member: TeamMember }) {
+  const [expanded, setExpanded] = useState(false)
+
+  return (
+    <motion.div
+      variants={cardVariants}
+      className="bg-white group hover:bg-[#F7F9FC] transition-colors duration-300"
+    >
+      {/* Photo */}
+      <div className="relative h-80 overflow-hidden bg-gray-50">
+        <Image
+          src={member.image}
+          alt={member.name}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          quality={90}
+          className={`object-cover ${member.position} group-hover:scale-105 transition-transform duration-500`}
+        />
+      </div>
+
+      {/* Info */}
+      <div className="p-8">
+        <div className="flex items-start justify-between mb-4">
+          <div>
+            <h3 className="text-xl font-semibold text-[#0B1F3B] mb-1">{member.name}</h3>
+            <div className="text-[11px] text-[#0B1F3B]/40 uppercase tracking-[0.15em]">{member.role}</div>
+          </div>
+          {member.linkedin !== "#" && (
+            <a
+              href={member.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#0B1F3B]/30 hover:text-[#0B1F3B] transition-colors mt-1"
+            >
+              <Linkedin className="w-4 h-4" />
+            </a>
+          )}
+        </div>
+        <div className="w-8 h-px bg-[#C9A84C] mb-4" />
+        <div className="space-y-4">
+          {member.bio.map((paragraph, i) => (
+            <p
+              key={paragraph}
+              className={`text-gray-500 text-lg leading-relaxed font-light ${
+                expanded ? "" : i === 0 ? "max-md:line-clamp-4" : "max-md:hidden"
+              }`}
+            >
+              {paragraph}
+            </p>
+          ))}
+        </div>
+        <button
+          type="button"
+          onClick={() => setExpanded(!expanded)}
+          aria-expanded={expanded}
+          className="md:hidden mt-3 text-xs tracking-[0.15em] uppercase font-medium text-[#0B1F3B]"
+        >
+          {expanded ? "See less" : "See more"}
+        </button>
+      </div>
+    </motion.div>
+  )
+}
+
 export default function Team() {
-  const team = [
+  const team: TeamMember[] = [
     {
       name: "Martín Aspíllaga",
       role: "Partner",
@@ -28,7 +102,7 @@ export default function Team() {
         "Founding Partner and Managing Director of Salkantay, where he structured and raised Peru's first institutional venture capital fund. Before Salkantay he was Fund Manager at Enfoca, then Peru's largest private equity manager, running a US$350M portfolio across four companies and serving as CFO of Maestro during its turnaround, where he restructured a US$60M loan and closed a consumer finance joint venture.",
         "Earlier he led M&A and strategy teams at Bain & Company in São Paulo, advising on a bank valued at US$500M and on joint ventures worth US$2.5B. MBA from Harvard Business School and economist from Universidad del Pacífico.",
       ],
-      image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/image-1761670210643.png?width=8000&height=8000&resize=contain",
+      image: "/Foto_Martin.png",
       linkedin: "https://pe.linkedin.com/in/martinaspillaga",
       position: "object-[center_30%]",
     },
@@ -36,22 +110,25 @@ export default function Team() {
       name: "Guillermo Miró Quesada",
       role: "Partner",
       bio: [
-        "Co-founder and Partner of Salkantay Ventures, where he has originated, negotiated and managed investments across more than twenty companies. He is also the founder of Blum, a mutual fund manager with more than US$120M in assets under management. Before Salkantay and Blum he was Vice President at Nexus Group, one of Peru's leading private equity firms, investing a US$320M fund, and served as CFO and Corporate Development Manager of Innova Schools.",
+        "Co-founder and Partner of Salkantay Ventures, where he has originated, negotiated and managed investments across more than twenty companies. He is also co-founder of Blum, a mutual fund manager with more than US$120M in assets under management. Before Salkantay and Blum he was Vice President at Nexus Group, one of Peru's leading private equity firms, investing a US$320M fund, and served as CFO and Corporate Development Manager of Innova Schools.",
         "Earlier he spent four years in New York at JP Morgan and Chase Securities, executing financings, acquisitions, valuations and private placements for private equity funds, on transactions of up to US$2.9B. Economist from Dartmouth College.",
       ],
-      image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/image-1761668998133.png?width=8000&height=8000&resize=contain",
+      image: "/Foto_Guillermo.png",
       linkedin: "https://pe.linkedin.com/in/guillermomiroquesada",
       position: "object-[center_30%]",
     },
-    /*{
+    {
       name: "Alfonso Montero",
       role: "Partner",
-      bio: "20+ years in asset management. Former CIO at Credicorp Capital (US$12B AUM) and Deputy CIO at Prima AFP (US$10B AUM). Co-founder of BLUM.",
-      image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/4ca888d5-6d2b-4bca-b425-08193c9bec72/image-1771251347205.png?width=8000&height=8000&resize=contain",
-      linkedin: "#",
-      position: "object-[center_25%]",
+      bio: [
+        "Co-founder of Blum, a mutual fund manager with more than US$120M in assets under management. Before that he was Chief Investment Officer at Credicorp Capital, responsible for asset allocation, security selection and performance across US$7.5B in mutual funds and client mandates, and previously founded Creuza Advisors, the first multifamily office advisory business in Peru.",
+        "Earlier he was Deputy Chief Investment Officer at Prima AFP, where he built and ran the firm's US$6.5B portfolios from inception, and began his career at Banco de Crédito del Perú across equity research, proprietary trading and institutional portfolio management. MBA from Stanford Graduate School of Business and philosophy graduate from Dartmouth College.",
+      ],
+      image: "/Foto_Alfonso.png",
+      linkedin: "https://pe.linkedin.com/in/alfonso-montero-667213",
+      position: "object-[center_30%]",
     },
-    {
+    /*{
       name: "Diego Marrero",
       role: "Partner",
       bio: "20+ years in investment management. Former CIO at AFP Habitat. Portfolio Manager at BLUM. MBA, Said Business School, Oxford.",
@@ -90,58 +167,14 @@ export default function Team() {
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-px bg-gray-100 max-w-5xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-100 max-w-7xl mx-auto"
           variants={staggerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
         >
           {team.map((member) => (
-            <motion.div
-              key={member.name}
-              variants={cardVariants}
-              className="bg-white group hover:bg-[#F7F9FC] transition-colors duration-300"
-            >
-              {/* Photo */}
-              <div className="relative h-80 overflow-hidden bg-gray-50">
-                <Image
-                  src={member.image}
-                  alt={member.name}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  quality={90}
-                  className={`object-cover ${member.position} group-hover:scale-105 transition-transform duration-500`}
-                />
-              </div>
-
-              {/* Info */}
-              <div className="p-7 md:p-9">
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <h3 className="text-xl font-semibold text-[#0B1F3B] mb-1">{member.name}</h3>
-                    <div className="text-[11px] text-[#0B1F3B]/40 uppercase tracking-[0.15em]">{member.role}</div>
-                  </div>
-                  {member.linkedin !== "#" && (
-                    <a
-                      href={member.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[#0B1F3B]/30 hover:text-[#0B1F3B] transition-colors mt-1"
-                    >
-                      <Linkedin className="w-4 h-4" />
-                    </a>
-                  )}
-                </div>
-                <div className="w-8 h-px bg-[#C9A84C] mb-4" />
-                <div className="space-y-4">
-                  {member.bio.map((paragraph) => (
-                    <p key={paragraph} className="text-gray-500 text-lg leading-relaxed font-light">
-                      {paragraph}
-                    </p>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
+            <TeamCard key={member.name} member={member} />
           ))}
         </motion.div>
       </div>

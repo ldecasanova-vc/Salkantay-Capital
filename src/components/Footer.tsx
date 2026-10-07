@@ -2,7 +2,7 @@
 
 import { motion, Variants } from "framer-motion"
 import { useState } from "react"
-import { Linkedin, Mail, Phone, MapPin, ArrowRight } from "lucide-react"
+import { Linkedin, Mail, MapPin, ArrowRight } from "lucide-react"
 import Image from "next/image"
 
 const sectionVariants: Variants = {
@@ -86,11 +86,7 @@ export default function Footer() {
               <div className="space-y-4">
                 <div className="flex items-center gap-3 text-white/60">
                   <Mail className="w-4 h-4 text-white/30" />
-                  <span className="text-lg">investors@salkantay.vc</span>
-                </div>
-                <div className="flex items-center gap-3 text-white/60">
-                  <Phone className="w-4 h-4 text-white/30" />
-                  <span className="text-lg">+51 1 234 5678</span>
+                  <span className="text-lg">contacto@salkantay.capital</span>
                 </div>
                 <div className="flex items-center gap-3 text-white/60">
                   <MapPin className="w-4 h-4 text-white/30" />
